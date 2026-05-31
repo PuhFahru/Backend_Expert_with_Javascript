@@ -40,7 +40,15 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Tests (Sengaja Gagal)
-        run: |
-          echo "Simulating test failure to get a red cross..."
-          exit 1
+      - name: Run Tests
+        run: npm run test:coverage
+        env:
+          HOST_TEST: localhost
+          PORT_TEST: 5000
+          PGHOST_TEST: localhost
+          PGUSER_TEST: postgres
+          PGDATABASE_TEST: forumapi_test
+          PGPASSWORD_TEST: ${{ secrets.PG_PASSWORD }}
+          PGPORT_TEST: 5432
+          ACCESS_TOKEN_KEY: 8b7b4ef375716ab08b2a3951b29d52fc00b1c855f9d1a847229b8c5935bef56d9d271e76a9cf08e614300395c3b90ebe559cf968a07411
+          REFRESH_TOKEN_KEY: 5078605e074a462b1460608fcbe0d0963c644402e04ad334455ff5a856cb43fd99825861dde02957d5e3184c90c532ca7d0249df20f
