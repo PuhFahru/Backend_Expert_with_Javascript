@@ -42,6 +42,7 @@ jobs:
 
       - name: Run Tests
         run: |
+          touch .test.env
           npm run migrate:test
           npm run test:coverage
         env:
