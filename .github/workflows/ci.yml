@@ -47,6 +47,13 @@ jobs:
           npm run test:coverage
         env:
           DATABASE_URL_TEST: postgres://postgres:${{ secrets.PG_PASSWORD }}@localhost:5432/forumapi_test
+          HOST: localhost
+          PORT: 5000
+          PGHOST: localhost
+          PGUSER: postgres
+          PGDATABASE: forumapi_test
+          PGPASSWORD: ${{ secrets.PG_PASSWORD }}
+          PGPORT: 5432
           HOST_TEST: localhost
           PORT_TEST: 5000
           PGHOST_TEST: localhost

@@ -15,7 +15,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.AWS_SSH_KEY }}
           script: |
             cd ~/Forum_Api_Backend
             git pull origin main
