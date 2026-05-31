@@ -1,0 +1,9 @@
+node_modules
+
+.idea
+coverage
+.env
+.test.env
+*.log
+*.pem
+*.md
