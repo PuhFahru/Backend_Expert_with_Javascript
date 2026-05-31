@@ -41,8 +41,11 @@ jobs:
         run: npm install
 
       - name: Run Tests
-        run: npm run test:coverage
+        run: |
+          npm run migrate:test
+          npm run test:coverage
         env:
+          DATABASE_URL_TEST: postgres://postgres:${{ secrets.PG_PASSWORD }}@localhost:5432/forumapi_test
           HOST_TEST: localhost
           PORT_TEST: 5000
           PGHOST_TEST: localhost
